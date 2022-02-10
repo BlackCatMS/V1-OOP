@@ -2,19 +2,19 @@ package Practicum02;
 
 public class MainA {
     public static void main(String[] arg) {
-        Pool z1 = new Pool(2.0, 5.5, 1.5);
-        System.out.println("WIDTH: " + z1.getWidth());
-        System.out.println("LENGTH: " + z1.getLength());
-        System.out.println("DEPTH: " + z1.getDepth());
-        System.out.println("CALCULATED VOLUME: " + z1.volume());
+        Zwembad z1 = new Zwembad(2.0, 5.5, 1.5);
+        System.out.println("BREEDTE: " + z1.getBreedte());
+        System.out.println("LENGTE: " + z1.getLengte());
+        System.out.println("DIEPTE: " + z1.getDiepte());
+        System.out.println("BEREKENDE INHOUD: " + z1.inhoud());
         System.out.println();
 
-        Pool z2 = new Pool( );
-        z2.setWidth(2.5);
-        z2.setLength(100.0);
-        z2.setDepth(2.0);
-        double vol = z2.volume();
-        System.out.println("PROPERTIES OF POOL: "+z2.toString());
-        System.out.println("CALCULATED VOLUME: " + z2.volume());
+        Zwembad z2 = new Zwembad( );
+        z2.setBreedte(2.5);
+        z2.setLengte(100.0);
+        z2.setDiepte(2.0);
+        double inh = z2.inhoud();
+        System.out.println("GEGEVENS ZWEMBAD: "+z2.toString());
+        System.out.println("BEREKENDE INHOUD: " + z2.inhoud());
     }
 }
