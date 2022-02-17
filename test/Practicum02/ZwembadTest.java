@@ -9,7 +9,7 @@ class ZwembadTest {
     @Test
     public void testBerekendeInhoud() {
         System.out.println("testBerekendeInhoud");
-        Zwembad z1 = new Zwembad(2.2, 5.5, 1.5);
+        Zwembad z1 = new Zwembad(2.0, 5.5, 1.5);
         assertEquals(16.5, z1.inhoud(), "test machine broke");
     }
 

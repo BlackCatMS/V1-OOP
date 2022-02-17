@@ -7,7 +7,13 @@ public class Voetbalclub {
     private int aantalVerloren;
 
     public Voetbalclub(String nm) {
-        this.name = nm;
+        if (nm == null) {
+            this.name = "FC";
+        } else if (nm.equals("")) {
+            this.name = "FC";
+        } else {
+            this.name = nm;
+        }
     }
 
     public void verwerkResultaat(char ch) {
@@ -29,5 +35,13 @@ public class Voetbalclub {
 
     public String toString() {
         return name + " " + aantalGespeeld() + " " + aantalGewonnen + " " + aantalGelijk + " " + aantalVerloren + " " + aantalPunten();
+    }
+
+    public String getClubName() {
+        return name;
+    }
+
+    public void setClubName(String club) {
+        this.name = club;
     }
 }
