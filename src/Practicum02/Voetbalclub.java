@@ -7,6 +7,8 @@ public class Voetbalclub {
     private int aantalVerloren;
 
     public Voetbalclub(String nm) {
+        // Simpele if-statements die controleren of de values van nm null of leeg zijn.
+        // Wanneer het beide niet null of niet leeg is, wordt de ingevoerde naam opgeslagen onder private String name.
         if (nm == null) {
             this.name = "FC";
         } else if (nm.equals("")) {
