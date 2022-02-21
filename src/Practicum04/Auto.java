@@ -17,7 +17,11 @@ public class Auto {
         return prijsPerDag;
     }
 
-    public String toSring() {
+    public String getType() {
+        return type;
+    }
+
+    public String toString() {
         return "placeholder";
     }
 }

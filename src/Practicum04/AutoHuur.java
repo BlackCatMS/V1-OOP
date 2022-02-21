@@ -2,6 +2,7 @@ package Practicum04;
 
 public class AutoHuur {
     private int aantalDagen;
+    private String autoType;
 
     public AutoHuur() {
     }
@@ -17,8 +18,12 @@ public class AutoHuur {
     public void setGehuurdeAuto(Auto gA) {
     }
 
-    public Auto getGehuurdeAuto() {
-        return auto;
+    public String getGehuurdeAuto() {
+        return autoType;
+    }
+
+    public Auto setGehuurdeAuto() {
+        autoType = Auto.getType();
     }
 
     public void setHuurder(Klant k) {
