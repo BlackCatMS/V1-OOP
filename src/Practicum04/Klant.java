@@ -16,7 +16,11 @@ public class Klant {
         return kortingsPercentage;
     }
 
-    public String toString() {
-        return "placeholder";
+    public String getNaam() {
+        return naam;
     }
+//
+//    public String toString() {
+//        return naam;
+//    }
 }

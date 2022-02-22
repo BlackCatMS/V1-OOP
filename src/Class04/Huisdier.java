@@ -12,8 +12,11 @@ public class Huisdier {
         gewicht = 0.0;
     }
 
-    public String getNaam() { return naam; }
-    public String getRas()  { return ras; }
+    public String getNaam() {
+        return naam; }
+
+    public String getRas()  {
+        return ras; }
 
     public void setBaasje(Eigenaar baasje) {
         this.baasje = baasje;
