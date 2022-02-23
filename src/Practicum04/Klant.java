@@ -9,7 +9,7 @@ public class Klant {
     }
 
     public void setKorting(double kP) {
-        kortingsPercentage = kP;
+        this.kortingsPercentage = kP;
     }
 
     public double getKorting() {
@@ -19,8 +19,8 @@ public class Klant {
     public String getNaam() {
         return naam;
     }
-//
-//    public String toString() {
-//        return naam;
-//    }
+
+    public String toString() {
+        return "op naam van: " + naam + " (korting: " + kortingsPercentage + "%)";
+    }
 }

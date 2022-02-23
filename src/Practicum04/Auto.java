@@ -17,11 +17,15 @@ public class Auto {
         return prijsPerDag;
     }
 
+    public void setType(String tp) {
+        this.type = tp;
+    }
+
     public String getType() {
         return type;
     }
 
     public String toString() {
-        return "placeholder";
+        return type + " met prijs per dag: " + prijsPerDag;
     }
 }

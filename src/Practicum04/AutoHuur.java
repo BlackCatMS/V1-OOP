@@ -2,8 +2,8 @@ package Practicum04;
 
 public class AutoHuur {
     private int aantalDagen;
-    private String huurder;
-    private String gehuurdeAuto;
+    private Klant huurder;
+    private Auto gehuurdeAuto;
     private double prijsPerDag;
     private double korting;
 
@@ -19,27 +19,31 @@ public class AutoHuur {
     }
 
     public void setGehuurdeAuto(Auto gA) {
-        this.gehuurdeAuto = gA.getType();
+        this.gehuurdeAuto = gA;
     }
 
-    public String getGehuurdeAuto() {
+    public Auto getGehuurdeAuto() {
         return gehuurdeAuto;
     }
 
     public void setHuurder(Klant k) {
-        this.huurder = k.getNaam();
+        this.huurder = k;
     }
 
-    public String getHuurder() {
+    public Klant getHuurder() {
         return huurder;
     }
 
-    public void setPrijsPerDag(Auto pr) {
-        this.prijsPerDag = pr.getPrijsPerDag();
+    public void setPrijsPerDag(Auto prPd) {
+        this.prijsPerDag = prPd.getPrijsPerDag();
+    }
+
+    public double getPrijsPerDag() {
+        return prijsPerDag;
     }
 
     public double totaalPrijs() {
-        return aantalDagen * prijsPerDag;
+        return (aantalDagen * getPrijsPerDag()) / 100 * (100 - getKorting());
     }
 
     public void setKorting(Klant kP) {
@@ -55,16 +59,16 @@ public class AutoHuur {
         if (gehuurdeAuto == null) {
             info += "er is geen auto bekend";
         } else {
-            info += "Autotype: " + gehuurdeAuto + " met prijs per dag " + prijsPerDag;
+            info += "Autotype: " + getGehuurdeAuto();
         }
 
         if (huurder == null) {
             info += "\ner is geen huurder bekend";
         } else {
-            info += "\nop naam van: " + huurder + " (korting: " + korting + "%)";
+            info += "\n"+ getHuurder();
         }
 
-        return info + "\naantal dagen: " + aantalDagen + " en dat kost: €" + totaalPrijs();
+        return info + "\naantal dagen: " + getAantalDagen() + ", en dat kost: €" + totaalPrijs();
 
     }
 }
