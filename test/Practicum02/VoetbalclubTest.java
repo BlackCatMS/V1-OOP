@@ -9,14 +9,19 @@ class VoetbalclubTest {
 
     // Testgeval 1: Check of de naam automatisch "FC" wordt bij "" & null.
     @Test
-    public void checkName() {
-        System.out.println("Running name tests... Names \"\", null, should be changed to \"FC\"");
-        Voetbalclub testBlank = new Voetbalclub("");
+    public void checkNameNull() {
+        System.out.println("Running name tests... Name null should be changed to \"FC\"");
         Voetbalclub testVoid = new Voetbalclub(null);
-        assertEquals("FC", testBlank.getClubName(), "Expected name to automatically convert to \"FC\". This didn't happen.");
-        assertEquals("FC", testVoid.getClubName(),"Expected name to automatically convert to \"FC\". This didn't happen.");
-        System.out.println("BlankNameTest passed. The club name was successfully changed to " + testBlank.getClubName() + " from \"\"");
+        assertEquals("FC", testVoid.getClubName(),"Expected name to automatically convert to \"FC\".");
         System.out.println("NullNameTest passed. The club name was successfully changed to " + testVoid.getClubName()+ " from null");
+    }
+
+    @Test
+    public void checkNameBlank() {
+        System.out.println("Running name test... Name \"\" should be changed to \"FC\"");
+        Voetbalclub testBlank = new Voetbalclub("");
+        assertEquals("FC", testBlank.getClubName(), "Expected name to automatically convert to \"FC\".");
+        System.out.println("BlankNameTest passed. The club name was succesfully changed to " + testBlank.getClubName() + " from \"\"");
     }
 
     // Testgeval 2: "w", "g", "v" geven respectievelijk 3, 1, 0 punten mee. Foutieve invoer past niet aantalGespeeld() aan.
@@ -24,15 +29,11 @@ class VoetbalclubTest {
     public void checkScore() {
         System.out.println("Running score tests... ");
         Voetbalclub testScore = new Voetbalclub("Test");
-        // In deze test worden resultaten na elke assertEquals() gewijzigd, en opnieuw gecontroleerd of de waardes kloppen.
-        testScore.verwerkResultaat('w');
-        assertEquals(3, testScore.aantalPunten(), "Expected a score of 3 points. This didn't happen");
-        testScore.verwerkResultaat('g');
-        assertEquals(4, testScore.aantalPunten(), "Expected a score of 4 points (3 + 1). This didn't happen");
-        testScore.verwerkResultaat('v');
-        assertEquals(4, testScore.aantalPunten(), "Expected a score of 4 points (3 + 1 + 0). This didn't happen");
-        assertEquals(3, testScore.aantalGespeeld(), "Expected 3 matched played. This didn't happen.");
-        testScore.verwerkResultaat('a');
+        // In deze test worden resultaten opgeteld bij elkaar en aan het einde gecontroleerd op beide aantalGespeeld en aantalPunten.
+        testScore.verwerkResultaat('w');  // +3
+        testScore.verwerkResultaat('g');  // +1
+        testScore.verwerkResultaat('v');  // +0
+        testScore.verwerkResultaat('a');  // +0, onherkende invoer
         // Foutieve invoer, zoals een onherkende ch, zou aantalGespeeld() niet aanpassen.
         assertEquals(4, testScore.aantalPunten(), "Expected a score of 4 points (Unchanged score). This didn't happen");
         assertEquals(3, testScore.aantalGespeeld(), "Expected 3 matched played (Unchanged amount) This didn't happen");
@@ -47,9 +48,9 @@ class VoetbalclubTest {
         testScore.verwerkResultaat('w');
         testScore.verwerkResultaat('g');
         testScore.verwerkResultaat('v');
-        // Een winst, een gelijkspel en een verlies brengen het volgende op:
-        // 3 gespeeld, 1 winst, 1 gelijkspel, 1 verlies, 4 punten,
-        // Deze test controleert of de output van toString() deze resultaten correct verwerkt.
+        /* Een winst, een gelijkspel en een verlies brengen het volgende op:
+           3 gespeeld, 1 winst, 1 gelijkspel, 1 verlies, 4 punten,
+           Deze test controleert of de output van toString() deze resultaten correct verwerkt. */
         assertEquals("Test 3 1 1 1 4", testScore.toString(), "Expected correct processing of the handled games, but instead encountered errors.");
         System.out.println("toString test passed.");
     }
@@ -59,8 +60,8 @@ class VoetbalclubTest {
     public void checkSum() {
         System.out.println("Running score tests... Adding up 5 matches: 3w, 1g, 1v, with 2 incorrect inputs.");
         Voetbalclub testScore = new Voetbalclub("Test");
-        // Er worden 7 resultaten verwerkt: drie winsten, één gelijkspel en één verloren wedstrijd.
-        // Er worden ook 2 foutieve inputs verwerkt. Dit draagt niet bij aan aantalGespeeld()
+        /* Er worden 7 resultaten verwerkt: drie winsten, één gelijkspel en één verloren wedstrijd.
+           Er worden ook 2 foutieve inputs verwerkt. Dit draagt niet bij aan aantalGespeeld() */
         testScore.verwerkResultaat('w');
         testScore.verwerkResultaat('3');
         testScore.verwerkResultaat('w');

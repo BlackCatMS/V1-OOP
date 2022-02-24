@@ -4,8 +4,6 @@ public class AutoHuur {
     private int aantalDagen;
     private Klant huurder;
     private Auto gehuurdeAuto;
-    private double prijsPerDag;
-    private double korting;
 
     public AutoHuur() {
     }
@@ -34,41 +32,32 @@ public class AutoHuur {
         return huurder;
     }
 
-    public void setPrijsPerDag(Auto prPd) {
-        this.prijsPerDag = prPd.getPrijsPerDag();
-    }
-
-    public double getPrijsPerDag() {
-        return prijsPerDag;
-    }
-
     public double totaalPrijs() {
-        return (aantalDagen * getPrijsPerDag()) / 100 * (100 - getKorting());
-    }
-
-    public void setKorting(Klant kP) {
-        this.korting = kP.getKorting();
-    }
-
-    public double getKorting() {
-        return korting;
+        if (gehuurdeAuto == null) {
+            return 0.0;
+        } else if (huurder == null) {
+            return 0.0;
+        } else {
+            return (aantalDagen * gehuurdeAuto.getPrijsPerDag()) / 100 * (100 - huurder.getKorting());
+        }
     }
 
     public String toString() {
         String info = "";
         if (gehuurdeAuto == null) {
             info += "er is geen auto bekend";
+
         } else {
-            info += "Autotype: " + getGehuurdeAuto();
+            info += "Autotype: " + gehuurdeAuto;
         }
 
         if (huurder == null) {
             info += "\ner is geen huurder bekend";
         } else {
-            info += "\n"+ getHuurder();
+            info += "\n"+ huurder;
         }
 
-        return info + "\naantal dagen: " + getAantalDagen() + ", en dat kost: €" + totaalPrijs();
+        return info + "\naantal dagen: " + aantalDagen + ", en dat kost: €" + totaalPrijs();
 
     }
 }
