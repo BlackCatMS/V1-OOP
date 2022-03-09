@@ -11,14 +11,14 @@ public class Huis {
     }
 
     public void setHuisbaas(Persoon hb) {
-        huisbaas = hb.getName();
+        this.huisbaas = hb;
     }
 
     public Persoon getHuisbaas() {
-        return (huisbaas);
+        return this.huisbaas;
     }
 
     public String toString() {
-        return "Huis " + adres + " is gebouwd in " + bouwjaar + "\nen heeft huisbaas " + huisbaas.getName();
+        return "Huis " + adres + " is gebouwd in " + bouwjaar + "\nen heeft huisbaas " + huisbaas.getName() + "; Leeftijd " + huisbaas.getLeeftijd() + " Jaar";
     }
 }

@@ -9,6 +9,10 @@ public class Persoon {
         leeftijd = lft;
     }
 
+    public Persoon() {
+
+    }
+
     public String getName() {
         return naam;
     }
@@ -18,6 +22,6 @@ public class Persoon {
     }
 
     public String toString() {
-        return "en heeft huisbaas " + naam + "; Leeftijd " + leeftijd + " jaar.";
+        return naam + "; Leeftijd " + leeftijd + " jaar.";
     }
 }

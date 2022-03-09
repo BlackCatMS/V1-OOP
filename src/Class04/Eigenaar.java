@@ -8,10 +8,16 @@ public class Eigenaar {
         naam = nm;
     }
 
-    public void setGiroNr(int nr) { giroNr = nr; }
+    public void setGiroNr(int nr) {
+        giroNr = nr;
+    }
 
-    public int getGiroNr()  { return giroNr; }
-    public String getNaam() { return naam; }
+    public int getGiroNr()  {
+        return giroNr;
+    }
+    public String getNaam() {
+        return naam;
+    }
 
     public String toString() {
         return naam + " heeft giro " + giroNr;

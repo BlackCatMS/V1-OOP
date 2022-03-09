@@ -13,10 +13,12 @@ public class Huisdier {
     }
 
     public String getNaam() {
-        return naam; }
+        return naam;
+    }
 
     public String getRas()  {
-        return ras; }
+        return ras;
+    }
 
     public void setBaasje(Eigenaar baasje) {
         this.baasje = baasje;
