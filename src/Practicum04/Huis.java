@@ -3,8 +3,7 @@ package Practicum04;
 public class Huis {
     private String adres;
     private int bouwjaar;
-    private String huisbaas;
-    private int leeftijd;
+    private Persoon huisbaas;
 
     public Huis(String adr, int bwjr) {
         adres = adr;
@@ -13,14 +12,13 @@ public class Huis {
 
     public void setHuisbaas(Persoon hb) {
         huisbaas = hb.getName();
-        leeftijd = hb.getLeeftijd();
     }
 
-    public String getHuisbaas() {
-        return huisbaas + "; Leeftijd " + leeftijd + " jaar";
+    public Persoon getHuisbaas() {
+        return (huisbaas);
     }
 
     public String toString() {
-        return "Huis " + adres + " is gebouwd in " + bouwjaar + "\nen heeft huisbaas " + huisbaas + "; Leeftijd: " + leeftijd + " jaar.";
+        return "Huis " + adres + " is gebouwd in " + bouwjaar + "\nen heeft huisbaas " + huisbaas.getName();
     }
 }
