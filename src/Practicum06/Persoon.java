@@ -18,8 +18,9 @@ public class Persoon {
     }
 
     public boolean koop(Game g) {
-        if (g.huidigeWaarde() < budget) {
+        if (g.huidigeWaarde() < budget && !mijnGames.contains(g)) {
             budget = budget - g.huidigeWaarde();
+            mijnGames.add(g);
             return true;
         }
         else {
@@ -28,9 +29,10 @@ public class Persoon {
     }
 
     public boolean verkoop(Game g, Persoon koper) {
-        if (koper.getBudget() > g.huidigeWaarde()) {
+        if (koper.getBudget() > g.huidigeWaarde() || !koper.mijnGames.contains(g)) {
             koper.koop(g);
             budget += g.huidigeWaarde();
+            this.mijnGames.remove(g);
             return true;
         } else {
             return false;

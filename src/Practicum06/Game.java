@@ -18,16 +18,17 @@ public class Game {
     }
 
     public double huidigeWaarde() {
-        int currentYear = LocalDate.now().getYear();
+        int yearDiff = LocalDate.now().getYear() - releaseJaar;
 
-        if (releaseJaar == currentYear) {
-            return nieuwprijs;
-        } else {
-            double currentPrice = 0;
+        if (yearDiff > 0) {
+            double currentPrice = this.nieuwprijs;
 
-            for (int i = 0; i < releaseJaar; i++)
-                currentPrice = nieuwprijs * 0.7;
+            for (int i = 0; i < yearDiff; i++) {
+                currentPrice *= 0.7;
+            }
             return currentPrice;
+        } else {
+            return nieuwprijs;
         }
 
     }
@@ -43,7 +44,7 @@ public class Game {
 
     @Override
     public String toString() {
-        return naam + ", uitgegeven in " + releaseJaar + "; Nieuwprijs: €" + String.format("%.2f", nieuwprijs) +
+        return naam + ", uitgegeven in " + releaseJaar + "; nieuwprijs: €" + String.format("%.2f", nieuwprijs) +
                 ", nu voor €" + String.format("%.2f", huidigeWaarde());
     }
 
