@@ -35,17 +35,20 @@ public class Game {
 
     @Override
     public boolean equals(Object andereObject) {
-        if (andereObject.equals(naam)) {
-            return true;
-        } else {
-            return false;
+
+        if (andereObject instanceof Game) {
+            Game g = (Game) andereObject;
+            if (this.naam.equals(g.naam) && this.releaseJaar == g.releaseJaar) {
+                return true;
+            }
         }
+        return false;
     }
 
     @Override
     public String toString() {
         return naam + ", uitgegeven in " + releaseJaar + "; nieuwprijs: €" + String.format("%.2f", nieuwprijs) +
-                ", nu voor €" + String.format("%.2f", huidigeWaarde());
+                " nu voor: €" + String.format("%.2f", huidigeWaarde());
     }
 
 }

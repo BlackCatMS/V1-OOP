@@ -23,20 +23,19 @@ public class Persoon {
             mijnGames.add(g);
             return true;
         }
-        else {
-            return false;
-        }
+        return false;
     }
 
     public boolean verkoop(Game g, Persoon koper) {
-        if (koper.getBudget() > g.huidigeWaarde() || !koper.mijnGames.contains(g)) {
-            koper.koop(g);
-            budget += g.huidigeWaarde();
-            this.mijnGames.remove(g);
-            return true;
-        } else {
-            return false;
+        if (mijnGames.contains(g) && !koper.mijnGames.contains(g)) {
+            if (koper.getBudget() > g.huidigeWaarde()) {
+                budget += g.huidigeWaarde();
+                koper.koop(g);
+                this.mijnGames.remove(g);
+                return true;
+            }
         }
+        return false;
     }
 
     public String toString() {
