@@ -38,6 +38,17 @@ public class Persoon {
         return false;
     }
 
+    public Game zoekGameOpNaam(Game nm) {
+        if (mijnGames.contains(nm)) {
+            return nm;
+        }
+        else {
+            return null;
+        }
+    }
+
+    @Override
+    // Ook hier gelt hetzelfde: De string-conversie kan niet een double van 59.99 omzetten naar 59,99
     public String toString() {
         String info = naam + " heeft een budget van €" + String.format("%.2f", budget) + " en bezit de volgende games:";
 
