@@ -38,13 +38,26 @@ public class Persoon {
         return false;
     }
 
-    public Game zoekGameOpNaam(Game nm) {
-        if (mijnGames.contains(nm)) {
-            return nm;
+    public Game zoekGameOpNaam(String nm) {
+        for (Game game : mijnGames) {
+            if (nm.equals(game.getNaam())) {
+                return game;
+            } else {
+                return null;
+            }
         }
-        else {
-            return null;
+        return null;
+    }
+
+    public ArrayList<Game> bepaalGamesNietInBezit(ArrayList<Game> teKoop) {
+        ArrayList<Game> games = new ArrayList<Game>();
+
+        for (Game g : teKoop) {
+            if (!mijnGames.contains(g)) {
+                games.add(g);
+            }
         }
+        return games;
     }
 
     @Override
