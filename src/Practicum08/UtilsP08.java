@@ -1,9 +1,9 @@
-package Practicum09;
+package Practicum08;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
-public class Utils {
+public class UtilsP08 {
     private static int counter;
 
     private static String afronden(double bedrag, int precisie){

@@ -1,5 +1,14 @@
 package Practicum09;
 
 public class Main {
-    Utils e1 = new euroBedrag(24.95);
+    public static void main(String [] Args){
+        System.out.println(Utils.getCounter());
+
+        System.out.println(Utils.euroBedrag(55.893256));
+        System.out.println(Utils.euroBedrag(3.14159, 1));
+        System.out.println(Utils.euroBedrag(3.14159, 1));
+        System.out.println(Utils.euroBedrag(3.14159, 1));
+
+        System.out.println(Utils.getCounter());
+    }
 }
