@@ -1,4 +1,4 @@
-package Practicum09;
+package Practicum09A;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
