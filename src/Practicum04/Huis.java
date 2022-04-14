@@ -19,6 +19,6 @@ public class Huis {
     }
 
     public String toString() {
-        return "Huis " + adres + " is gebouwd in " + bouwjaar + "\nen heeft huisbaas " + huisbaas.getName() + "; Leeftijd " + huisbaas.getLeeftijd() + " Jaar";
+        return "Huis " + adres + " is gebouwd in " + bouwjaar + "\nen heeft huisbaas " + huisbaas;
     }
 }

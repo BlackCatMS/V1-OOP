@@ -16,10 +16,6 @@ public class Klant {
         return kortingsPercentage;
     }
 
-    public String getNaam() {
-        return naam;
-    }
-
     public String toString() {
         return "op naam van: " + naam + " (korting: " + kortingsPercentage + "%)";
     }

@@ -50,6 +50,9 @@ public class BoekingenController {
     private DatePicker VertrekDatumEntry;
 
     @FXML
+    // Herkansing: NaamEntry controle moet op Equals zijn, correcte error-handling of melding wanneer de data incorrect is ingevuld
+    // Herkansing: Na elke check een aparte foutmelding geven op het scherm, niet in de console
+    // Herkansing: Foute input moet niet een boeking alsnog insturen
     void MaakBoeking(ActionEvent event) {
         try{
         if(NaamEntry.getText()!=null && AdresEntry.getText()!=null && AankomstDatumEntry.getValue().isAfter(LocalDate.now().minusDays(1)) && AankomstDatumEntry.getValue().isBefore(VertrekDatumEntry.getValue()) && KamerTypeEntry.getValue()!=null){

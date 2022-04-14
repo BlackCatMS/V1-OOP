@@ -7,6 +7,13 @@ import java.nio.file.Path;
 import java.util.List;
 import java.util.Scanner;
 
+
+/*
+Herkansing: Wanneer het bronbestand niet bestaat, moet de user een nieuwe mogelijkheid krijgen om het bronbestand opnieuw
+in te voeren.
+Herkansing: Exception handling bij koerswaardeinvoer, zodra er niet een Double ingevoerd wordt, krijgt de gebruiker een
+nieuwe poging, of gaat het programma uit van de koerswaarde: 1 USD = 0.918720 EUR
+ */
 public class Main {
     public static void main(String[] args) throws IOException {
         Scanner keyboardScanner = new Scanner(System.in);
@@ -44,8 +51,5 @@ public class Main {
             output.close();
             System.out.println("Conversion success! The converted prices are located at " + p2);
         }
-
-
-
     }
 }
