@@ -15,10 +15,10 @@ public class Huis {
     }
 
     public Persoon getHuisbaas() {
-        return this.huisbaas;
+        return huisbaas;
     }
 
     public String toString() {
-        return "Huis " + adres + " is gebouwd in " + bouwjaar + "\nen heeft huisbaas " + huisbaas.getName() + "; Leeftijd " + huisbaas.getLeeftijd() + " Jaar";
+        return "Huis " + adres + " is gebouwd in " + bouwjaar + "\nen heeft huisbaas " + huisbaas;
     }
 }

@@ -9,18 +9,6 @@ public class Persoon {
         leeftijd = lft;
     }
 
-    public Persoon() {
-
-    }
-
-    public String getName() {
-        return naam;
-    }
-
-    public int getLeeftijd() {
-        return leeftijd;
-    }
-
     public String toString() {
         return naam + "; Leeftijd " + leeftijd + " jaar.";
     }
