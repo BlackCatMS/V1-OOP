@@ -3,10 +3,10 @@ package Practicum08;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
-public class UtilsP08 {
+public class UtilsP08 { // This is no longer in use, class Auto implements the method from Practicum09A
     private static int counter;
 
-    private static String afronden(double bedrag, int precisie){
+    private static String afronden(double bedrag, int precisie) {
         counter+=1;
         BigDecimal bd = new BigDecimal(bedrag);
         bd = bd.setScale(precisie, RoundingMode.HALF_UP);
@@ -21,7 +21,7 @@ public class UtilsP08 {
         return afronden(bedrag, precisie);
     }
 
-    public static int getCounter(){
+    public static int getCounter() {
         return counter;
     }
 }

@@ -2,26 +2,29 @@ package Practicum08;
 
 import java.util.ArrayList;
 
-public class BedrijfsInventaris{
+public class BedrijfsInventaris {
     private String bedrijfsnaam;
     private double budget;
     private ArrayList<Goed> alleGoederen = new ArrayList<>();
 
-    public BedrijfsInventaris(String nm, double bud){
+    public BedrijfsInventaris(String nm, double bud) {
         bedrijfsnaam = nm;
         budget = bud;
     }
 
-    public void schafAan(Goed g){
-        if(!this.alleGoederen.contains(g) && this.budget >= g.huidigeWaarde()){
+    public void schafAan(Goed g) {
+        if(!this.alleGoederen.contains(g) && this.budget >= g.huidigeWaarde()) {
             this.budget -= g.huidigeWaarde();
             alleGoederen.add(g);
         }
+        if (this.budget < g.huidigeWaarde()) {
+            System.out.println("Onvoldoende budget om item " + g + " aan te schaffen");
+        }
     }
 
-    public String toString(){
+    public String toString() {
         String s = "Alle goederen in het inventaris:\n";
-        for (Goed g : alleGoederen){
+        for (Goed g : alleGoederen) {
             s += g.toString() + "\n";
         }
         return s;
