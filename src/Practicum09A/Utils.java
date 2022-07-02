@@ -6,9 +6,7 @@ import java.math.RoundingMode;
 public class Utils {
 
     public static String euroBedrag(double bedrag) {
-        BigDecimal bd = new BigDecimal(bedrag);
-        bd = bd.setScale(2, RoundingMode.HALF_UP);
-        return bd.doubleValue() + "";
+        return euroBedrag(bedrag, 2);
     }
 
     public static String euroBedrag(double bedrag, int precisie) {

@@ -71,9 +71,9 @@ public class BoekingenController {
                             NaamEntry.getText(),
                             AdresEntry.getText(),
                             KamerTypeEntry.getValue());
-        } else if (NaamEntry.getText() == null) {
+        } else if (NaamEntry.getText() == "") {
             boekingLabel.setText("Uw naam is niet ingevuld!");
-        } else if (AdresEntry.getText() == null) {
+        } else if (AdresEntry.getText() == "") {
             boekingLabel.setText("Adres is niet ingevuld!");
         } else if (!AankomstDatumEntry.getValue().isAfter(LocalDate.now().minusDays(1))) {
             boekingLabel.setText("De aankomstdatum is in het verleden!");
